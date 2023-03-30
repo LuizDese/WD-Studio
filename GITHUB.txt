@@ -1,0 +1,75 @@
+class TIPOSDEATI extends StatefulWidget{
+   const TIPOSDEATI ({Key? key}):super(key: key);
+  principal2 createState() => principal2();
+}
+class principal2 extends State<TIPOSDEATI>{
+  final _textController3 = TextEditingController();
+  final _textController4 = TextEditingController();
+  final _textController5 = TextEditingController();
+  String exempo = "";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text("Escolher qual é o melhor exercício"),),
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+              child: Text(exempo),
+            )),
+            TextField(
+              controller: _textController5,
+              decoration: const InputDecoration(
+              labelText: "Que exercícios você gosta? Musculação, Dança e caminhada",
+              border: OutlineInputBorder(),
+              ),
+            ),
+            MaterialButton(onPressed: (){
+              setState(() {
+                String resultado = _textController5.text;
+                int result = int.parse(resultado);
+                if(result<16){
+                  setState(() {
+                    exempo = "Pessoas abaixo do peso têm mais chance de morte que obesos.\n"
+                    "Análise de 51 estudos mostrou que as pessoas com baixo Índice de Massa Corporal estão mais propensas à morte precoce\n"
+                    "O que pode causar?\n"
+                    "As complicações associadas ao baixo peso incluem doenças pulmonares, cardiovasculares - como insuficiência cardíaca - quedas e lesões devido a uma menor taxa de massa muscular, além de suicídios em decorrência de doenças mentais.\n"
+                    "O que devo fazer?\n"
+                    "Ao perder muito peso em um curto período de tempo, é preciso investigar a causa do emagrecimento. A melhor maneira é procurando um médico para a realização de exames. No caso dos transtornos alimentares, como bulimia e anorexia nervosa, ainda é indicado o acompanhamento terapêutico.";
+                  });
+                }
+                if(result==16){
+                  setState(() {
+                    exempo = "Pessoas abaixo do peso têm mais chance de morte que obesos.\n"
+                    "Análise de 51 estudos mostrou que as pessoas com baixo Índice de Massa Corporal estão mais propensas à morte precoce\n"
+                    "O que pode causar?\n"
+                    "As complicações associadas ao baixo peso incluem doenças pulmonares, cardiovasculares - como insuficiência cardíaca - quedas e lesões devido a uma menor taxa de massa muscular, além de suicídios em decorrência de doenças mentais.\n"
+                    "O que devo fazer?\n"
+                    "Ao perder muito peso em um curto período de tempo, é preciso investigar a causa do emagrecimento. A melhor maneira é procurando um médico para a realização de exames. No caso dos transtornos alimentares, como bulimia e anorexia nervosa, ainda é indicado o acompanhamento terapêutico.";
+                  });
+                }
+                if(result>16){
+                  setState(() {
+                    exempo = "Quem está acima do peso deve procurar um especialista, para fazer exames e ser orientado na prática de exercícios. Essa orientação é fundamental, para que não haja sobrecarga na coluna vertebral. E quando o paciente desenvolve uma hérnia de disco, é necessário fazer uma avaliação para indicar o melhor tratamento.\n"
+                    "3 causas e o que fazer em cada caso:\n"
+                    "1: Alimentação rica em açúcar, gordura e carboidratos.\n"
+                    "O que fazer?\n"
+                    "fazer mudanças na dieta incluindo uma alimentação balanceada e rica em frutas, legumes, verduras, fibras e água, conforme orientação do médico e do nutricionista.\n"
+                    "2: Falta de atividade física.\n"
+                    "O que fazer/\n"
+                    "o ideal é que, para perder peso, sejam feitos de 150 a 300 minutos de atividades físicas por semana, sendo fundamental ter uma avaliação médica antes de iniciar os exercícios para avaliar o estado de saúde, além de ter a orientação de um educador físico para evitar lesões como tendinites ou distensões musculares, por exemplo.\m"
+                    "3: Predisposição genética.\n"
+                    "O que fazer?\n"
+                    "a prática de exercícios diários e a alimentação pobre em gordura deve fazer parte da rotina. Em alguns casos, o médico pode indicar o uso de remédios para emagrecer ou a realização de cirurgia bariátrica, por exemplo.";
+                  });
+                }
+              });
+            },child: Text("Escolher"),)
+          ],
+        ),
+      )
+    );
+  }
+}
